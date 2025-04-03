@@ -18,3 +18,19 @@ let button = document.getElementById("clickMe");
 document.addEventListener("click", function() {
     button.innerHTML = "You clicked me!";
 }); 
+
+let colorButton = document.getElementById("randomColorBtn");
+console.log(colorButton);
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    randomColor = `rgb(${r}, ${g}, ${b})`;    
+    console.log(randomColor);
+    return randomColor;
+}
+
+colorButton.addEventListener("click", function() {
+    colorButton.style.backgroundColor = getRandomColor();
+});
