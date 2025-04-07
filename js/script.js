@@ -15,12 +15,9 @@ document.addEventListener("keydown", function(e) {
 });
 
 let button = document.getElementById("clickMe");
-document.addEventListener("click", function() {
+button.addEventListener("click", function() {
     button.innerHTML = "You clicked me!";
 }); 
-
-let colorButton = document.getElementById("randomColorBtn");
-console.log(colorButton);
 
 function getRandomColor() {
     const r = Math.floor(Math.random() * 256);
@@ -31,6 +28,14 @@ function getRandomColor() {
     return randomColor;
 }
 
+let colorButton = document.getElementById("randomColorBtn");
+console.log(colorButton);
 colorButton.addEventListener("click", function() {
-    colorButton.style.backgroundColor = getRandomColor();
+    document.body.style.backgroundColor = getRandomColor();
 });
+
+function changeBtnStyle() {
+    const btn = document.querySelector(".cool-btn");
+    console.log(btn);
+    btn.classList.toggle("glow"); // Toggles glow effect
+}
